@@ -78,9 +78,6 @@
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
 \RequirePackage[default,opentype]{sourcesanspro}
-\RequirePackage{ebgaramond}
-% \RequirePackage{}
-% \RequirePackage{ebgar}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -171,92 +168,6 @@
 \newcommand*{\footerfont}{\sourcesanspro}
 \newcommand*{\bodyfont}{\sourcesanspro}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
-
-
-
-\newcommand{\setfont}[1]{
-  \if\relax\detokenize{#1}\relax
-    % 如果 #1 为空,则使用默认字体
-    \renewcommand*{\headerfont}{\roboto}
-    \renewcommand*{\headerfontlight}{\robotolight}
-    \renewcommand*{\footerfont}{\sourcesanspro}
-    \renewcommand*{\bodyfont}{\sourcesanspro}
-    \renewcommand*{\bodyfontlight}{\sourcesansprolight}
-  \else
-    % 否则,根据输入的参数选择字体
-    \ifcsname #1\endcsname
-      \renewcommand*{\headerfont}{\csname #1\endcsname}
-      \renewcommand*{\headerfontlight}{\csname #1\endcsname}
-      \renewcommand*{\footerfont}{\csname #1\endcsname}
-      \renewcommand*{\bodyfont}{\csname #1\endcsname}
-      \renewcommand*{\bodyfontlight}{\csname #1\endcsname}
-    \else
-      \ifstrequal{#1}{pbkx}{
-        \RequirePackage{charter}
-      }{}
-      \ifstrequal{#1}{bch}{
-        \RequirePackage{charter}
-      }{}
-      \ifstrequal{#1}{pplx}{
-        \RequirePackage{palatino}
-      }{}
-      \ifstrequal{#1}{pgx}{
-        \RequirePackage{garamondx}
-      }{}
-      \ifstrequal{#1}{ptm}{
-        \RequirePackage{times}
-      }{}
-      \ifstrequal{#1}{pbk}{
-        \RequirePackage{bookman}
-      }{}
-      \ifstrequal{#1}{pca}{
-        \RequirePackage{charter}
-      }{}
-      \ifstrequal{#1}{put}{
-        \RequirePackage{fourier}
-      }{}
-      \renewcommand*{\headerfont}{\fontfamily{#1}\selectfont}
-      \renewcommand*{\headerfontlight}{\fontfamily{#1}\selectfont}
-      \renewcommand*{\footerfont}{\fontfamily{#1}\selectfont}
-      \renewcommand*{\bodyfont}{\fontfamily{#1}\selectfont}
-      \renewcommand*{\bodyfontlight}{\fontfamily{#1}\selectfont}
-    \fi
-  \fi
-}
-
-% \setfont{ebgaramond}
-% \setfont{pbkx}
-% \setfont{bch}
-% \setfont{pplx}
-%% \setfont{pgx}
-\setfont{ptm}
-% \setfont{pbk}
-% \setfont{pca}
-% \setfont{put}
-% \setfont{ebgaramond}
-% \setfont{}
-
-% \newcommand*{\headerfont}{\rmfamily}
-% \newcommand*{\headerfontlight}{\rmfamily}
-% \newcommand*{\footerfont}{\rmfamily}
-% \newcommand*{\bodyfont}{\rmfamily}
-% \newcommand*{\bodyfontlight}{\rmfamily}
-
-% \newcommand*{\footerfont}{\ebgaramond}
-% \newcommand*{\bodyfont}{\ebgaramond}
-% \newcommand*{\bodyfontlight}{\ebgaramond}
-
-% \newcommand*{\footerfont}{\fontfamily{pgx}\selectfont}
-% \newcommand*{\bodyfont}{\fontfamily{pgx}\selectfont}
-% \newcommand*{\bodyfontlight}{\fontfamily{pgx}\selectfont}
-
-% \newcommand*{\footerfont}{\fontfamily{pbkx}\selectfont}
-% \newcommand*{\bodyfont}{\fontfamily{pbkx}\selectfont}
-% \newcommand*{\bodyfontlight}{\fontfamily{pbkx}\selectfont}
-
-% \newcommand*{\footerfont}{\fontfamily{bch}\selectfont}
-% \newcommand*{\bodyfont}{\fontfamily{bch}\selectfont}
-% \newcommand*{\bodyfontlight}{\fontfamily{bch}\selectfont}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
